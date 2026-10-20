@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon GX</title>
+    <style>
+        :root {
+            --bg: #090711;
+            --panel: #151020;
+            --purple: #a855f7;
+            --pink: #ec4899;
+            --text: #f5f3ff;
+            --muted: #a39ab8;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 20px;
+            font-family: "Segoe UI", Arial, sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(ellipse at top, #29113e 0%, transparent 55%),
+                var(--bg);
+        }
+
+        .logo {
+            font-size: clamp(42px, 8vw, 76px);
+            font-weight: 900;
+            letter-spacing: -4px;
+            margin-bottom: 8px;
+            background: linear-gradient(90deg, var(--purple), var(--pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            filter: drop-shadow(0 0 24px #a855f755);
+        }
+
+        .subtitle {
+            color: var(--muted);
+            letter-spacing: 4px;
+            font-size: 11px;
+            text-transform: uppercase;
+            margin-bottom: 38px;
+        }
+
+        .search {
+            display: flex;
+            width: min(650px, 100%);
+            padding: 7px;
+            border: 1px solid #a855f744;
+            border-radius: 18px;
+            background: #151020dd;
+            box-shadow: 0 0 35px #a855f71a;
+            transition: border-color .2s, box-shadow .2s;
+        }
+
+        .search:focus-within {
+            border-color: var(--purple);
+            box-shadow: 0 0 30px #a855f733;
+        }
+
+        .search input {
+            flex: 1;
+            min-width: 0;
+            padding: 15px;
+            border: 0;
+            outline: 0;
+            color: var(--text);
+            background: transparent;
+            font-size: 16px;
+        }
+
+        .search button {
+            border: 0;
+            border-radius: 12px;
+            padding: 0 22px;
+            color: white;
+            background: linear-gradient(135deg, var(--purple), #7c3aed);
+            cursor: pointer;
+            font-weight: 700;
+            transition: transform .2s, filter .2s;
+        }
+
+        .search button:hover {
+            transform: scale(1.03);
+            filter: brightness(1.2);
+        }
+
+        h2 {
+            margin: 42px 0 18px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--muted);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .links {
+            width: min(650px, 100%);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+            gap: 12px;
+        }
+
+        .link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 17px;
+            border: 1px solid #ffffff0d;
+            border-radius: 15px;
+            color: var(--text);
+            background: var(--panel);
+            text-decoration: none;
+            transition: transform .2s, border-color .2s,
+                        background .2s, box-shadow .2s;
+        }
+
+        .link:hover {
+            transform: translateY(-4px);
+            border-color: #a855f766;
+            background: #21152f;
+            box-shadow: 0 8px 25px #0005;
+        }
+
+        .icon {
+            display: grid;
+            place-items: center;
+            width: 36px;
+            height: 36px;
+            flex-shrink: 0;
+            border-radius: 11px;
+            background: linear-gradient(135deg, #a855f733, #ec489922);
+            font-size: 18px;
+        }
+
+        .link span:last-child {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        footer {
+            margin-top: 50px;
+            color: #6f667f;
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 480px) {
+            .logo { letter-spacing: -2px; }
+            .search button { padding: 0 14px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">NEON GX</div>
+    <div class="subtitle">Your web. Your world.</div>
+
+    <form class="search" action="https://www.google.com/search" method="GET">
+        <input
+            type="text"
+            name="q"
+            placeholder="Search the web..."
+            aria-label="Search the web"
+            autofocus
+            required
+        >
+        <button type="submit">SEARCH ↗</button>
+    </form>
+
+    <h2>Quick Launch</h2>
+
+    <div class="links">
+        <a class="link" href="https://www.youtube.com">
+            <span class="icon">▶</span>
+            <span>YouTube</span>
+        </a>
+
+        <a class="link" href="https://www.twitch.tv">
+            <span class="icon">◈</span>
+            <span>Twitch</span>
+        </a>
+
+        <a class="link" href="https://www.reddit.com">
+            <span class="icon">◉</span>
+            <span>Reddit</span>
+        </a>
+
+        <a class="link" href="https://store.steampowered.com">
+            <span class="icon">🎮</span>
+            <span>Steam</span>
+        </a>
+
+        <a class="link" href="https://discord.com/app">
+            <span class="icon">◌</span>
+            <span>Discord</span>
+        </a>
+
+        <a class="link" href="https://open.spotify.com">
+            <span class="icon">♫</span>
+            <span>Spotify</span>
+        </a>
+
+        <a class="link" href="https://www.netflix.com">
+            <span class="icon">N</span>
+            <span>Netflix</span>
+        </a>
+
+        <a class="link" href="https://github.com">
+            <span class="icon">⌘</span>
+            <span>GitHub</span>
+        </a>
+    </div>
+
+    <footer>NEON GX · POWERED BY FIREFOX</footer>
+
+    <script>
+        document.querySelector(".search input").focus();
+    </script>
+</body>
+</html>
